@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 
 import com.cloudinary.Cloudinary;
 
-
 @SpringBootApplication
 public class WebProjectApplication implements CommandLineRunner{
 	@Value("${cloudinary.cloud_name}")

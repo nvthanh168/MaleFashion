@@ -65,7 +65,7 @@ public class OrderController {
 			return "redirect:/home";
 		} else {
 			List<Cart> Cart = cartService.GetAllCartByUser_id(user.getId());
-			if (Cart == null) {
+			if (!Cart.isEmpty()) {
 				String a = session.getAttribute("Total").toString();
 				int Total = Integer.parseInt(a);
 				System.out.println(Total);

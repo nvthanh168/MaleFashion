@@ -211,38 +211,14 @@
 							</div>
 							<h3 th:text="${product.price}+' VNĐ'"></h3>
 							<p th:text="${product.description}"></p>
-							<!-- <div class="product__details__option">
-								<div class="product__details__option__size">
-									<span>Size:</span> <label for="xxl">xxl <input
-										type="radio" id="xxl">
-									</label> <label class="active" for="xl">xl <input type="radio"
-										id="xl">
-									</label> <label for="l">l <input type="radio" id="l">
-									</label> <label for="sm">s <input type="radio" id="sm">
-									</label>
-								</div>
-								<div class="product__details__option__color">
-									<span>Color:</span> <label class="c-1" for="sp-1"> <input
-										type="radio" id="sp-1">
-									</label> <label class="c-2" for="sp-2"> <input type="radio"
-										id="sp-2">
-									</label> <label class="c-3" for="sp-3"> <input type="radio"
-										id="sp-3">
-									</label> <label class="c-4" for="sp-4"> <input type="radio"
-										id="sp-4">
-									</label> <label class="c-9" for="sp-9"> <input type="radio"
-										id="sp-9">
-									</label>
-								</div>
-							</div> -->
-							<form action="addToCart" method="post">
+							<form action="/addToCart" method="post">
 								<div class="product__details__cart__option">
 									<div class="quantity">
 										<div class="pro-qty">
-											<input name="count" type="text" value="1"> <input
-												name="product_id" style="display: none;" type="text"
-												th:value="${product.id}">
+											<input name="count" type="text" value="1">
 										</div>
+										<input name="product_id" style="display: none;" type="text"
+											th:value="${product.id}">
 									</div>
 									<button class="primary-btn">add to cart</button>
 								</div>
@@ -415,18 +391,21 @@
 									<li><a href="#"><img src="/img/icon/heart.png" alt=""></a></li>
 									<li><a href="#"><img src="/img/icon/compare.png"
 											alt=""> <span>Compare</span></a></li>
-									<li><a th:href="@{/productDetail/{id}(id=${y.id})}"><img src="/img/icon/search.png" alt=""></a></li>
+									<li><a th:href="@{/productDetail/{id}(id=${y.id})}"><img
+											src="/img/icon/search.png" alt=""></a></li>
 								</ul>
 							</div>
 							<div class="product__item__text">
 								<h6 th:text="${y.product_Name}"></h6>
-								<a th:href="@{/addToCart/{id}(id=${y.id})}" class="add-cart">+ Add To Cart</a>
+								<a th:href="@{/addToCart/{id}(id=${y.id})}" class="add-cart">+
+									Add To Cart</a>
 								<div class="rating">
 									<i class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i
 										class="fa fa-star-o"></i> <i class="fa fa-star-o"></i> <i
 										class="fa fa-star-o"></i>
 								</div>
-								<h5 th:text=" ${#numbers.formatDecimal(y.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></h5>
+								<h5
+									th:text=" ${#numbers.formatDecimal(y.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></h5>
 								<div class="product__color__select">
 									<label for="pc-1"> <input type="radio" id="pc-1">
 									</label> <label class="active black" for="pc-2"> <input
